@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AryoStyle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <a href="#" class="logo">AryoStyle</a>
+        <div id="nav-items" class="nav-hidden">
+            <a href="C:\Users\Aryo Nugraha\Documents\Tugas IMK\Beranda\index.html">Home</a>
+            <a href="https://linktr.ee/AryoStyle">Checkout</a>
+            <a href="C:\Users\Aryo Nugraha\Documents\Tugas IMK\About Us\index.html">About Us</a>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Cari...">
+        </div>
+        
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#"><img src="icons8-facebook-500.png" alt="Facebook"></a>
+            <a href="#"><img src="icons8-whatsapp-500.png" alt="WhatsApp"></a>
+            <a href="#"><img src="icons8-tiktok-500.png" alt="TikTok"></a>
+            <a href="#"><img src="icons8-twitterx-500.png" alt="TwitterX"></a>
+            <a href="#"><img src="icons8-youtube-480.png" alt="YouTube"></a>
+            <a href="#"><img src="icons8-instagram-500.png" alt="Instagram"></a>
+        </div>
+    </nav>
+    
+  <!-- Judul Halaman -->
+  <h1>Tentang AryoStyle</h1>
+
+  <!-- Paragraf Pengantar -->
+  <p>Selamat datang di <strong>AryoStyle</strong>, toko online yang menyediakan berbagai pilihan fashion untuk anak-anak dan keluarga. Kami berdedikasi untuk menghadirkan produk berkualitas dengan gaya terbaru yang sesuai dengan berbagai kebutuhan, mulai dari pakaian kasual hingga aksesoris dan sepatu.</p>
+<br>
+  <!-- Misi Kami -->
+  <h2>Misi Kami</h2>
+  <p>Kami percaya bahwa setiap orang berhak tampil penuh gaya tanpa mengorbankan kenyamanan. Di <strong>AryoStyle</strong>, kami menghadirkan koleksi fashion yang didesain dengan bahan terbaik, memastikan kenyamanan untuk dikenakan sehari-hari, baik untuk anak-anak maupun dewasa. Misi kami adalah membuat pengalaman belanja online menjadi mudah, menyenangkan, dan memuaskan bagi semua pelanggan kami.</p>
+<br>
+  <!-- Alasan Memilih AryoStyle -->
+  <h2>Mengapa Memilih AryoStyle?</h2>
+  <ul>
+      <li><strong>Produk Berkualitas:</strong> Kami hanya memilih produk dari merek terpercaya dengan kualitas yang telah teruji.</li>
+      <li><strong>Desain Trendy:</strong> Koleksi kami selalu up-to-date dengan tren fashion terbaru untuk memberikan penampilan terbaik.</li>
+      <li><strong>Harga Terjangkau:</strong> Kami berkomitmen untuk memberikan harga yang kompetitif tanpa mengurangi kualitas.</li>
+      <li><strong>Pelayanan Pelanggan Terbaik:</strong> Tim kami siap membantu Anda kapan saja untuk menjawab pertanyaan atau memberikan rekomendasi.</li>
+  </ul>
+<br>
+  <!-- Kategori Produk Kami -->
+  <h2>Kategori Produk Kami</h2>
+  <p>
+      Kami menyediakan beragam kategori produk untuk memenuhi kebutuhan fashion keluarga Anda:
+  </p>
+  <ul>
+    <li><strong>Aksesoris:</strong> Tambahkan sentuhan akhir yang sempurna dengan aksesoris seperti topi, tas, dan banyak lagi.</li>
+      <li><strong>Pakaian Bayi dan Anak:</strong> Mulai dari pakaian sehari-hari hingga gaun dan setelan yang cocok untuk berbagai kesempatan.</li>
+      <li><strong>Pakaian Remaja dan Dewasa:</strong> Membantu menemukan fashion dan style anda.</li>
+      <li><strong>Sepatu & Sandal:</strong> Koleksi sepatu dan sandal untuk berbagai usia, memberikan kenyamanan sekaligus gaya.</li>
+  </ul>
+<br>
+  <!-- Penutup -->
+  <p>Di <strong>AryoStyle</strong>, kami terus berinovasi dan berkomitmen untuk memberikan pengalaman belanja yang lebih baik dan menyenangkan. Terima kasih telah mempercayai kami sebagai pilihan belanja online Anda.</p>
+<br>
+  <!-- Hubungi Kami -->
+  <h2>Hubungi Kami</h2>
+  <p>Jika Anda memiliki pertanyaan atau butuh bantuan, jangan ragu untuk menghubungi kami melalui media sosial kami.</p>
+
+</body>
+<script>
+ function toggleMenu() {
+        var navItems = document.getElementById('nav-items');
+        if (navItems.classList.contains('nav-hidden')) {
+            navItems.classList.remove('nav-hidden');
+        } else {
+            navItems.classList.add('nav-hidden');
+        }
+    }
+    function toggleText(element, fullText, shortText, isExpanded) {
+        if (isExpanded) {
+            // Menampilkan teks lebih sedikit
+            element.innerText = shortText;
+            return false; // Ubah status menjadi tidak diperluas
+        } else {
+            // Menampilkan teks lengkap
+            element.innerText = fullText;
+            return true; // Ubah status menjadi diperluas
+        }
+    }
+
+    document.querySelectorAll('.product').forEach(product => {
+        // Ambil elemen judul dan deskripsi
+        const titleElement = product.querySelector('.title');
+        const descriptionElement = product.querySelector('.description');
+        
+        // Ambil teks lengkap dan potongan teks untuk judul
+        const fullTitle = titleElement.getAttribute('data-full-title');
+        const shortTitle = fullTitle.substring(0, 35) + '...';
+
+        // Ambil teks lengkap dan potongan teks untuk deskripsi
+        const fullDescription = descriptionElement.getAttribute('data-full-description');
+        const shortDescription = fullDescription.substring(0, 35) + '...';
+
+        // Mulai dengan menampilkan teks singkat
+        titleElement.innerText = shortTitle;
+        descriptionElement.innerText = shortDescription;
+
+        // Status untuk mengecek apakah teks sedang diperluas atau tidak
+        let isTitleExpanded = false;
+        let isDescriptionExpanded = false;
+
+        // Tambahkan tautan untuk judul
+        const titleToggleLink = document.createElement('span');
+        titleToggleLink.innerText = ' Baca Selengkapnya';
+        titleToggleLink.style.color = 'blue';
+        titleToggleLink.style.cursor = 'pointer';
+        titleToggleLink.onclick = () => {
+            isTitleExpanded = toggleText(titleElement, fullTitle, shortTitle, isTitleExpanded);
+            titleToggleLink.innerText = isTitleExpanded ? ' Tampilkan Lebih Sedikit' : ' Baca Selengkapnya';
+        };
+        titleElement.appendChild(titleToggleLink);
+
+        // Tambahkan tautan untuk deskripsi
+        const descriptionToggleLink = document.createElement('span');
+        descriptionToggleLink.innerText = ' Baca Selengkapnya';
+        descriptionToggleLink.style.color = 'blue';
+        descriptionToggleLink.style.cursor = 'pointer';
+        descriptionToggleLink.onclick = () => {
+            isDescriptionExpanded = toggleText(descriptionElement, fullDescription, shortDescription, isDescriptionExpanded);
+            descriptionToggleLink.innerText = isDescriptionExpanded ? ' Tampilkan Lebih Sedikit' : ' Baca Selengkapnya';
+        };
+        descriptionElement.appendChild(descriptionToggleLink);
+    });
+</script>
+
+</html>
+  
